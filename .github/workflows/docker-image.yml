@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build and push Docker image
-      uses: docker/build-push-action@v1
-      with:
-        repository: lwamb/my-image-name
+    - name: DockerHub Build And Push
+      uses: lwamb/my-image-name:tagname/Dockerhub-Build-Push@v1.0
+   
       
