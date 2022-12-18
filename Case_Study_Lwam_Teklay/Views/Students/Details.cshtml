@@ -1,0 +1,33 @@
+﻿
+@model IEnumerable<Case_Study_Lwam_Teklay.Models.Student>
+@{
+    ViewData["Title"] = "Students";
+}
+<div class="row">
+
+    @foreach (var student in Model)
+    {
+       
+        <div class="col-4">
+            <h2 class="card-title">@student.Name</h2>
+            <div class="card">
+                
+                <img class="card-img-top" src="@student.Image.First().File.Url?w=130" />
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">@student.Name</h5>
+            <p>Age: @student.Age</p>
+            <p>Department: @student.Department</p>
+            <p>Degree Phase: @student.DegreePhase</p>
+            <p>Description: @student.Description</p>
+            <p class="button">
+                <a asp-controller="Students" asp-action="Index" class="btn btn-primary" role="button">Go Back</a>
+            </p>
+            <p class="button">
+                <a asp-controller="Home" asp-action="Index" class="btn btn-secondary" role="button">Go Back to the Welcome Page</a>
+            </p>
+        </div>
+    }
+</div>
+  
